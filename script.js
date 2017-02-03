@@ -6,9 +6,17 @@ var near= $("#input").val();
   var url2= "&near=";
  var url3="&query=";
  
- var url11= url + url2 + near + type;
+ var url4= url + url2 + near + url3 +  type;
  
- $.getJSON(url, function)
+ $.getJSON(url4, function(response){
+  $("#Results").append("This is the restaurants name...."+"<br>" + response.response.venues[0].name + "<br>");
+  $("#Results").append("This is the restaurants number..." + "<br>" + response.response.venues[0].contact.phone + "<br>");
+  $("#Results").append("This is therestaurants address...." + "<br>" + response.response.venues[0].location.address + "<br>"); 
+  
+  console.log(response);
+ }
+ 
+ 
  
  
  
